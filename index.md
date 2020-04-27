@@ -7,6 +7,6 @@ description: Personal Blog by Erwin Gaitan
 authorImg: require(/me.jpg)
 logo: https://www.goerwin.co/favicon.2ffaed93a60f96abd18e6d71ef564314.png
 blogName: GOErwin
-baseUrl: file:///C:/Users/erwin.gaitan/Projects/myblog/__generatedBlog__/
+baseUrl: https://www.goerwin.co/blog/
 postsPerPage: 20
 ---
