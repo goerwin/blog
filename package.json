@@ -1,0 +1,27 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "blog-generator -s -i .",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && blog-generator -i . -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upload-files": "ssh goerwin@goerwin.co 'rm -rf /var/www/blog.goerwin.co/html && mkdir /var/www/blog.goerwin.co/html' && scp -r ./dist/* goerwin@goerwin.co:/var/www/blog.goerwin.co/html",
+    "deploy": "npm run build && npm run upload-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goerwin/blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goerwin/blog/issues"
+  },
+  "homepage": "https://github.com/goerwin/blog#readme",
+  "devDependencies": {
+    "blog-generator": "git+https://github.com/goerwin/blogGenerator.git"
+  }
+}

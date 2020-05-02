@@ -5,7 +5,7 @@ description: Configure Nginx server in Ubuntu
 date: 2020-05-01
 ---
 
-| Note: If you want the one liner, [One Liner](#one-liner)
+> Note: If you want the one liner, [One Liner](#one-liner)
 
 Make sure you have no `/etc/nginx` folder and if you do, remove any `Nginx` instance you may have in your system with:
 
@@ -97,19 +97,16 @@ and paste in the following config (which will also handle redirects from non-www
 
 ```sh
 server {
-    listen       80;
-    server_name  example.com;
-    return       301 $scheme://www.example.com$request_uri;
+    server_name example.com;
+    listen 80;
+    return 301 $scheme://www.example.com$request_uri;
 }
 
 server {
+    server_name www.example.com;
     listen 80;
-    listen [::]:80;
-
     root /var/www/example.com/html;
     index index.html;
-
-    server_name www.example.com;
 
     location / {
         try_files $uri $uri/ =404;
@@ -137,6 +134,10 @@ Now, verify all configs have no syntax errors and restart Nginx:
 $ sudo nginx -t
 $ sudo systemctl restart nginx
 ```
+
+## Add SSL Certificate to your sites
+
+You can follow this really good [tutorial](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04) from Digital Ocean
 
 ## One liner
 
@@ -167,13 +168,10 @@ echo "$_SITENAME page" | sudo tee $_WWW_FOLDER$_SITENAME/html/index.html > /dev/
 
 # Create config file
 _CONFIG_FILE="server {
+    server_name $_SITENAME;
     listen 80;
-    listen [::]:80;
-
     root $_WWW_FOLDER$_SITENAME/html;
     index index.html;
-
-    server_name $_SITENAME;
 
     location / {
         try_files \$uri \$uri/ =404;
@@ -182,19 +180,16 @@ _CONFIG_FILE="server {
 
 if [ "$_IF_DOMAIN_REDIRECT_NON_WWW_TO_WWW" = "true" ] ; then
   _CONFIG_FILE="server {
-    listen       80;
-    server_name  $_SITENAME;
-    return       301 \$scheme://www.$_SITENAME\$request_uri;
+    listen 80;
+    server_name $_SITENAME;
+    return 301 \$scheme://www.$_SITENAME\$request_uri;
 }
 
 server {
+    server_name www.$_SITENAME;
     listen 80;
-    listen [::]:80;
-
     root $_WWW_FOLDER$_SITENAME/html;
     index index.html;
-
-    server_name www.$_SITENAME;
 
     location / {
         try_files \$uri \$uri/ =404;
