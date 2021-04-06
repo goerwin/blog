@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout, { LayoutContent } from '../components/Layout';
-import SEO from '../components/seo';
+import SEO from '../components/Seo';
 
 export default function NotFound() {
   return (

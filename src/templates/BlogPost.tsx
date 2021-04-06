@@ -2,8 +2,8 @@ import { graphql, Link } from 'gatsby';
 import React from 'react';
 import Bio from '../components/Bio';
 import Layout, { LayoutContent } from '../components/Layout';
-import SEO from '../components/seo';
-import * as styles from './blogPost.module.css';
+import SEO from '../components/Seo';
+import * as styles from './BlogPost.module.css';
 
 export default function BlogPostTemplate({ data }: any) {
   const post = data.markdownRemark;

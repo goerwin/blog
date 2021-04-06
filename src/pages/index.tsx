@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import Bio from '../components/Bio';
 import Layout, { LayoutContent } from '../components/Layout';
-import SEO from '../components/seo';
+import SEO from '../components/Seo';
 import * as styles from './index.module.css';
 
 export default function Index({ data, location }: any) {
