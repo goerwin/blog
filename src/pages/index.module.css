@@ -1,0 +1,25 @@
+.blogListContainer {
+  margin-top: 4em;
+  list-style: none;
+  padding: 0;
+}
+
+.article {
+  margin-bottom: 3em;
+
+  > h2 {
+    margin: 0;
+  }
+
+  > h2 a {
+    box-shadow: none;
+  }
+
+  > small {
+    opacity: 0.8;
+  }
+
+  p {
+    margin: 0;
+  }
+}

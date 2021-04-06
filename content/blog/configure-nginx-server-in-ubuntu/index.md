@@ -5,6 +5,7 @@ description: Configure Nginx server in Ubuntu
 date: 2020-05-01
 ---
 
+
 > Note: If you want the one liner, [One Liner](#one-liner)
 
 Make sure you have no `/etc/nginx` folder and if you do, remove any `Nginx` instance you may have in your system with:

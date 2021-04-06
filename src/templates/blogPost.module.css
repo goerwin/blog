@@ -1,0 +1,27 @@
+.content {
+  padding: 20px 0;
+}
+
+.header {
+  margin-bottom: 40px;
+
+  > h1 {
+    margin: 0;
+  }
+
+  > p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.bottomNav {
+  margin-top: 3em;
+
+  > ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  padding: 0 0 30px;
+}
+
+.header {
+  padding: 20px 0;
+
+  a {
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: none;
+    font-family: monospace;
+    text-transform: lowercase;
+  }
+}
+
+.content {
+  max-width: var(--pageMaxWidth);
+  margin: 0 auto;
+  padding: 0 var(--pageHorizontalPadding);
+}
