@@ -1,4 +1,5 @@
 @import './normalize.css';
+@import 'prismjs/themes/prism-twilight.css';
 
 :root {
   --pageMaxWidth: 800px;
@@ -10,11 +11,8 @@ body {
   background-color: #111;
   color: #ddd;
   line-height: 1.75;
-  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-family: 'Merriweather', 'Georgia', Cambria, 'Times New Roman', Times,
-    serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto,
+    'Helvetica Neue', Helvetica, Arial, 'Noto Sans', sans-serif;
 }
 
 a {
