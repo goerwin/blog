@@ -5,6 +5,16 @@ import Layout, { LayoutContent } from '../components/Layout';
 import SEO from '../components/Seo';
 import * as styles from './index.module.css';
 
+function Login() {
+  const { isLoading, data } = usePost((attrs) => sendPostInfo(attrs));
+
+  return (
+    <div className={styles.container}>
+      <span>34234</span>
+    </div>
+  );
+}
+
 export default function Index({ data, location }: any) {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
